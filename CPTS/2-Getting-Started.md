@@ -35,7 +35,7 @@ As mentioned previously, the core tenet of infosec is information assurance, or 
 In infosec, we usually hear the terms `red team` and `blue team`
 + In the simplest terms, the `red team` plays the attackers' role, while the `blue team` plays the defenders' part
 
-Red teamers usually play an adversary role in breaking into the organization to identify any potential weaknesses real attackers may utilize to break the organization's defenses
+Red teamers usually play an adversa-ry role in breaking into the organization to identify any potential weaknesses real attackers may utilize to break the organization's defenses
 + The most common task on the red teaming side is penetration testing, social engineering, and other similar offensive techniques
 
 On the other hand, the blue team makes up the majority of infosec jobs
@@ -479,4 +479,19 @@ There are many commands available to us. The following are some of them:
 `Vim` is a very powerful tool and has many other commands and features. This [cheatsheet](https://vimsheet.com) is an excellent resource for further unlocking the power of `Vim`
 
 ## Service Scanning 
-TODO
+We're ready to take it a step further and start exploring a machine!
++ The first thing we need to do is identify the operating system and any available services that might be running
++ A service is an application running on a computer that performs some useful function for other users or computers
++ We call these specialized machines that host these useful services "servers" instead of workstations, allowing users to interact with and consume these various services
++ What we're interested in are services that have either been misconfigured or have a vulnerability
++ Instead of performing the actions expected as part of the service, we are interested to see if we can coerce the service into performing some unintended action that supports our objectives, such as executing a command of our choosing
+
+Computers are assigned an IP address, which allows them to be uniquely identified and accessible on a network
++ The services running on these computers may be assigned a port number to make the service accessible
++ As discussed prior, port numbers range from 1 to 65,535, with the range of well-known ports 1 to 1,023 being reserved for privileged services
++ Port 0 is a reserved port in TCP/IP networking and is not used in TCP or UDP messages
++ If anything attempts to bind to port 0 (such as a service), it will bind to the next available port above port 1,024 because port 0 is treated as a "wild card" port
+
+To access a service remotely, we need to connect using the correct IP address and port number and use a language that the service understands
++ Manually examining all of the 65,535 ports for any available services would be laborious, and so tools have been created to automate this process and scan the range of ports for us
++ One of the most commonly used scanning tools is Nmap(Network Mapper).
